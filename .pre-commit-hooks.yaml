@@ -3,6 +3,6 @@
     entry: mypy
     language: python
     'types': [python]
-    args: ["--ignore-missing-imports", "--scripts-are-modules"]
+    args: ["--ignore-missing-imports", "--scripts-are-modules", "--no-warn-unused-ignores"]
     require_serial: true
     additional_dependencies: []
