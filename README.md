@@ -27,3 +27,13 @@ To change the arguments, override the `args` as follows:
     -   id: mypy
         args: [--no-strict-optional, --ignore-missing-imports]
 ```
+
+Because `pre-commit` runs `mypy` from an isolated virtualenv (without your
+dependencies) you may also find it useful to add the typed dependencies to
+`additional_dependencies` so `mypy` can better perform dynamic analysis:
+
+```yaml
+    hooks:
+    -   id: mypy
+        additional_dependencies: [tokenize-rt==3.2.0]
+```
