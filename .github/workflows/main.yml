@@ -1,0 +1,23 @@
+name: main
+on:
+  push:
+    branches: [master]
+  schedule:
+  - cron: '30 8 * * *'
+
+jobs:
+  build:
+    name: main
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v1
+    - uses: actions/setup-python@v1
+    - run: pip install pre-commit-mirror-maker
+    - run: git config --global user.name pre-commit
+    - run: git config --global user.email pre-commit@example.com
+    - run: pre-commit-mirror . --language=python --package-name=mypy --types=python --args=--ignore-missing-imports,--scripts-are-modules --require-serial
+    - run: |
+        git remote set-url origin https://x-access-token:$GH_TOKEN@github.com/$GITHUB_REPOSITORY
+        git push origin HEAD:refs/heads/master --tags
+      env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
