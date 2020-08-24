@@ -37,3 +37,6 @@ dependencies) you may also find it useful to add the typed dependencies to
     -   id: mypy
         additional_dependencies: [tokenize-rt==3.2.0]
 ```
+
+Note that if you don't specify additional dependencies, because of the isolated
+virtualenv you might get different output when running `mypy` into your own virtualenv.
