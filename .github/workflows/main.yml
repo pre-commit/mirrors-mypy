@@ -13,8 +13,8 @@ jobs:
     - uses: actions/checkout@v1
     - uses: actions/setup-python@v1
     - run: pip install pre-commit-mirror-maker
-    - run: git config --global user.name pre-commit
-    - run: git config --global user.email pre-commit@example.com
+    - run: git config --global user.name 'Github Actions'
+    - run: git config --global user.email '41898282+github-actions[bot]@users.noreply.github.com'
     - run: pre-commit-mirror . --language=python --package-name=mypy --types=python --args=--ignore-missing-imports,--scripts-are-modules --require-serial
     - run: |
         git remote set-url origin https://x-access-token:$GH_TOKEN@github.com/$GITHUB_REPOSITORY
