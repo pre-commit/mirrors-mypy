@@ -37,3 +37,6 @@ dependencies) you may also find it useful to add the typed dependencies to
     -   id: mypy
         additional_dependencies: [tokenize-rt==3.2.0]
 ```
+
+Note that using the `--install-types` is problematic. Mutating the pre-commit
+environment at runtime breaks cache and will break parallel builds.
