@@ -1,5 +1,6 @@
 -   id: mypy
     name: mypy
+    description: ''
     entry: mypy
     language: python
     'types_or': [python, pyi]
