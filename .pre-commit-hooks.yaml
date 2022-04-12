@@ -1,7 +1,7 @@
 -   id: mypy
     name: mypy
     description: ''
-    entry: mypy
+    entry: bash -c 'mypy .' --
     language: python
     'types_or': [python, pyi]
     args: ["--ignore-missing-imports", "--scripts-are-modules"]
