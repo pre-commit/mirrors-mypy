@@ -25,7 +25,7 @@ To change the arguments, override the `args` as follows:
 ```yaml
     hooks:
     -   id: mypy
-        args: [--no-strict-optional, --ignore-missing-imports]
+        args: [--strict, --ignore-missing-imports]
 ```
 
 Because `pre-commit` runs `mypy` from an isolated virtualenv (without your
