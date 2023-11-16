@@ -18,14 +18,14 @@ Add this to your `.pre-commit-config.yaml`
 ```
 
 
-By default, mypy will run with `mypy --ignore-missing-imports`, `pre-commit`
-runs `mypy` from an isolated virtualenv so it won't have access to those.
+By default, mypy will run with `mypy --ignore-missing-imports --scripts-are-modules`,
+`pre-commit` runs `mypy` from an isolated virtualenv so it won't have access to those.
 To change the arguments, override the `args` as follows:
 
 ```yaml
     hooks:
     -   id: mypy
-        args: [--strict, --ignore-missing-imports]
+        args: [--strict, --ignore-missing-imports, --scripts-are-modules]
 ```
 
 Because `pre-commit` runs `mypy` from an isolated virtualenv (without your
